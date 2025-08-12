@@ -1,10 +1,10 @@
-
+ï»¿
 namespace MVP_Architecture
 {
     /// <summary>
     /// Interface for the HP View in MVP pattern.
     /// Defines methods for updating HP text and slider.
-    /// MVP ÆĞÅÏ¿¡¼­ HP View ÀÎÅÍÆäÀÌ½º. HP ÅØ½ºÆ®¿Í ½½¶óÀÌ´õ ¾÷µ¥ÀÌÆ® ¸Ş¼­µå¸¦ Á¤ÀÇ.
+    /// MVP íŒ¨í„´ì—ì„œ HP View ì¸í„°í˜ì´ìŠ¤. HP í…ìŠ¤íŠ¸ì™€ ìŠ¬ë¼ì´ë” ì—…ë°ì´íŠ¸ ë©”ì„œë“œë¥¼ ì •ì˜.
     /// </summary>
     public interface IViewHP
     {

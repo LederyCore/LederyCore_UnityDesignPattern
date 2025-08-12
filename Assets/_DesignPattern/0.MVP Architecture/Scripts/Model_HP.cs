@@ -1,25 +1,25 @@
-
+ï»¿
 namespace MVP_Architecture
 {
     /// <summary>
     /// HP Model in MVP pattern.
     /// Stores and manages HP values and basic operations.
-    /// MVP ÆĞÅÏ¿¡¼­ HP µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ°í ±âº» ¿¬»êÀ» Á¦°øÇÏ´Â Model Å¬·¡½º.
+    /// MVP íŒ¨í„´ì—ì„œ HP ë°ì´í„°ë¥¼ ì €ì¥í•˜ê³  ê¸°ë³¸ ì—°ì‚°ì„ ì œê³µí•˜ëŠ” Model í´ë˜ìŠ¤.
     /// </summary>
     public class Model_HP
     {
         #region Fields
-        private int _maxHP = 100;               // Maximum HP value. (ÃÖ´ë HP °ª, ±âº» 100)
-        private int _hp = 50;                   // Current HP value. (ÇöÀç HP °ª, ÃÊ±â°ª 50)
+        private int _maxHP = 100;               // Maximum HP value. (ìµœëŒ€ HP ê°’, ê¸°ë³¸ 100)
+        private int _hp = 50;                   // Current HP value. (í˜„ì¬ HP ê°’, ì´ˆê¸°ê°’ 50)
         #endregion
 
         #region Properties
         /// <summary>
-        /// Current HP value. (ÇöÀç HP °ª)
+        /// Current HP value. (í˜„ì¬ HP ê°’)
         /// </summary>
         public int HP => _hp;
         /// <summary>
-        /// Maximum HP value. (ÃÖ´ë HP °ª)
+        /// Maximum HP value. (ìµœëŒ€ HP ê°’)
         /// </summary>
         public int MaxHP => _maxHP;
         #endregion
@@ -27,7 +27,7 @@ namespace MVP_Architecture
         #region Methods
         /// <summary>
         /// Increases HP by the given value without clamping.
-        /// ÁÖ¾îÁø °ª¸¸Å­ HP¸¦ Áõ°¡. Å¬·¥ÇÎ ¾øÀ½.
+        /// ì£¼ì–´ì§„ ê°’ë§Œí¼ HPë¥¼ ì¦ê°€. í´ë¨í•‘ ì—†ìŒ.
         /// </summary>
         public void Increment(int value)
         {
@@ -37,8 +37,8 @@ namespace MVP_Architecture
         /// <summary>
         /// Decreases HP by the given value.
         /// If HP falls below 0, it is reset to 0 (via Reset()).
-        /// ÁÖ¾îÁø °ª¸¸Å­ HP¸¦ °¨¼Ò.
-        /// HP°¡ 0 ¹Ì¸¸ÀÌ¸é Reset()À» È£ÃâÇØ 0À¸·Î ÃÊ±âÈ­.
+        /// ì£¼ì–´ì§„ ê°’ë§Œí¼ HPë¥¼ ê°ì†Œ.
+        /// HPê°€ 0 ë¯¸ë§Œì´ë©´ Reset()ì„ í˜¸ì¶œí•´ 0ìœ¼ë¡œ ì´ˆê¸°í™”.
         /// </summary>
         public void Decrement(int value)
         {
@@ -51,7 +51,7 @@ namespace MVP_Architecture
 
         /// <summary>
         /// Resets HP to 0.
-        /// HP¸¦ 0À¸·Î ÃÊ±âÈ­.
+        /// HPë¥¼ 0ìœ¼ë¡œ ì´ˆê¸°í™”.
         /// </summary>
         public void Reset()
         {
