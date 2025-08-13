@@ -66,7 +66,7 @@
         /// </summary>
         public void UpdateHPSlider()
         {
-            _view.UpdateHPSlider(CalcNormalizedHP());
+            _view.UpdateHPSlider(_model.HPPercentage);
         }
 
         /// <summary>
@@ -76,20 +76,7 @@
         private void RefreshView()
         {
             _view.UpdateHPText(_model.HP);
-            _view.UpdateHPSlider(CalcNormalizedHP());
-        }
-
-        /// <summary>
-        /// Calculates HP percentage normalized to 0~1 range.
-        /// 0~1 범위의 HP 퍼센트를 계산.
-        /// </summary>
-        private float CalcNormalizedHP()
-        {
-            if (_model.MaxHP <= 0) return 0f;
-            float n = (float)_model.HP / _model.MaxHP;
-            if (n < 0f) n = 0f;
-            else if (n > 1f) n = 1f;
-            return n;
+            _view.UpdateHPSlider(_model.HPPercentage);
         }
         #endregion
     }

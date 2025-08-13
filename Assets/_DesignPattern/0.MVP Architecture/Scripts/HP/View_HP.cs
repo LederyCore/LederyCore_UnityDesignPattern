@@ -11,7 +11,7 @@ namespace MVP_Architecture
     /// MVP 패턴에서 HP View 역할을 수행.
     /// HP 값 및 슬라이더 UI 업데이트를 담당하고, 사용자 입력을 Presenter에 전달.
     /// </summary>
-    public class View_HP : MonoBehaviour, IViewHP
+    public class View_HP : View_Base, IViewHP
     {
         #region Fields
         [SerializeField] private TextMeshProUGUI _hpText;       // HP value text (HP 값 표시용 텍스트)

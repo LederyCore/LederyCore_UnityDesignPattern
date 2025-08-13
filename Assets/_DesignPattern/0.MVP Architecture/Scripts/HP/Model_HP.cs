@@ -1,4 +1,6 @@
 ﻿
+using UnityEditor.ShaderGraph.Internal;
+
 namespace MVP_Architecture
 {
     /// <summary>
@@ -22,6 +24,10 @@ namespace MVP_Architecture
         /// Maximum HP value. (최대 HP 값)
         /// </summary>
         public int MaxHP => _maxHP;
+        /// <summary>
+        /// Current HP as a percentage of Max HP. (현재 HP를 최대 HP의 백분율로 표현)
+        /// </summary>
+        public float HPPercentage => (float)_hp / _maxHP;
         #endregion
 
         #region Methods
