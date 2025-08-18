@@ -4,7 +4,7 @@ namespace MVP_Architecture
     using UnityEngine.EventSystems;
 
     /// <summary>
-    /// ÀÎº¥Åä¸® UIÀÇ View °èÃþ Å¬·¡½ºÀÔ´Ï´Ù.  
+    /// ï¿½Îºï¿½ï¿½ä¸® UIï¿½ï¿½ View ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.  
     /// Handles drag-and-drop and click toggle for the inventory panel in MVP architecture.
     /// - Implements IViewInventory to connect with the presenter.  
     /// - Supports smooth drag movement with pointer offset to prevent snapping.  
@@ -40,20 +40,20 @@ namespace MVP_Architecture
         }
 
         /// <summary>
-        /// ÀÎº¥Åä¸® ¿µ¿ª Å¬¸¯ ½Ã ÄÜÅÙÃ÷ ÆÐ³ÎÀ» Åä±ÛÇÕ´Ï´Ù.  
+        /// ï¿½Îºï¿½ï¿½ä¸® ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.  
         /// Toggles the content panel on inventory click.
         /// </summary>
-        /// <param name="eventData">Å¬¸¯ ÀÌº¥Æ® µ¥ÀÌÅÍ / Pointer event data.</param>
+        /// <param name="eventData">Å¬ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / Pointer event data.</param>
         public void OnPointerClick(PointerEventData eventData)
         {
             _contentPanel.SetActive(!_contentPanel.activeSelf);
         }
 
         /// <summary>
-        /// µå·¡±× ½ÃÀÛ ½Ã Æ÷ÀÎÅÍ¿Í ¿ÀºêÁ§Æ® »çÀÌÀÇ ¿ÀÇÁ¼ÂÀ» °è»êÇÏ°í Raycast¸¦ ºñÈ°¼ºÈ­ÇÕ´Ï´Ù.  
+        /// ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ Raycastï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Õ´Ï´ï¿½.  
         /// Calculates pointer offset and disables raycast blocking at the start of drag.
         /// </summary>
-        /// <param name="eventData">µå·¡±× ½ÃÀÛ ÀÌº¥Æ® µ¥ÀÌÅÍ / Pointer event data at drag start.</param>
+        /// <param name="eventData">ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / Pointer event data at drag start.</param>
         public void OnBeginDrag(PointerEventData eventData)
         {
             _cg.blocksRaycasts = false;
@@ -66,10 +66,10 @@ namespace MVP_Architecture
         }
 
         /// <summary>
-        /// µå·¡±× Áß ÀÎº¥Åä¸® ÆÐ³ÎÀÇ À§Ä¡¸¦ ¾÷µ¥ÀÌÆ®ÇÕ´Ï´Ù.  
+        /// ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸® ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Õ´Ï´ï¿½.  
         /// Updates the inventory panel position while dragging.
         /// </summary>
-        /// <param name="eventData">µå·¡±× ÀÌº¥Æ® µ¥ÀÌÅÍ / Pointer event data during drag.</param>
+        /// <param name="eventData">ï¿½å·¡ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / Pointer event data during drag.</param>
         public void OnDrag(PointerEventData eventData)
         {
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -82,10 +82,10 @@ namespace MVP_Architecture
         }
 
         /// <summary>
-        /// µå·¡±× Á¾·á ½Ã Raycast Â÷´ÜÀ» ´Ù½Ã È°¼ºÈ­ÇÕ´Ï´Ù.  
+        /// ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Raycast ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ È°ï¿½ï¿½È­ï¿½Õ´Ï´ï¿½.  
         /// Re-enables raycast blocking after drag ends.
         /// </summary>
-        /// <param name="eventData">µå·¡±× Á¾·á ÀÌº¥Æ® µ¥ÀÌÅÍ / Pointer event data at drag end.</param>
+        /// <param name="eventData">ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / Pointer event data at drag end.</param>
         public void OnEndDrag(PointerEventData eventData)
         {
             _cg.blocksRaycasts = true;
