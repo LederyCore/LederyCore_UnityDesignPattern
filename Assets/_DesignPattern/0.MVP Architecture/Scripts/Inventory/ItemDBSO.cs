@@ -11,15 +11,12 @@ namespace MVP_Architecture
         private List<ItemSO> _itemSO = new List<ItemSO>();
         #endregion
 
-        public void AddItem(ItemSO item)
-        {
-            _itemSO.Add(item);
-        }
-
+        #region Methods
         public IReadOnlyList<ItemSO> GetItems()
         {
             return _itemSO;
         }
+        #endregion
     }
 }
 

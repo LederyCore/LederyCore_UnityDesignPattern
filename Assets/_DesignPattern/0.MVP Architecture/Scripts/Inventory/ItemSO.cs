@@ -10,7 +10,7 @@ namespace MVP_Architecture
         [SerializeField]
         private string _name;
         [SerializeField]
-        private Texture2D _texture;
+        private Sprite _texture;
         [SerializeField]
         private string _description;
         #endregion
