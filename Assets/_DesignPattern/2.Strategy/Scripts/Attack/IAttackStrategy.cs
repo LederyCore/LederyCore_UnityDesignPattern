@@ -1,9 +1,12 @@
-﻿namespace Strategy
+﻿
+
+namespace Strategy
 {
+    using UnityEngine;
 
 
     public interface IAttackStrategy
     {
-        void Attack();
+        void Attack(Transform transform);
     }
 }
