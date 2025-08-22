@@ -11,6 +11,7 @@
     public class PlayerMoveController : MonoBehaviour
     {
         #region Fields
+
         private Rigidbody _rb;
         private Vector2 _moveVector;
         private float _speed = 5f;
@@ -33,21 +34,23 @@
                 _rb.MovePosition(next);
             }
         }
+
         #endregion
 
         #region Move
-        public void OnMovePerformed(InputAction.CallbackContext ctx)
+        public void OnMovePerformed(Vector2 vec)
         {
-            _moveVector = ctx.ReadValue<Vector2>();
+            _moveVector = vec;
         }
 
-        public void OnMoveCanceled(InputAction.CallbackContext ctx)
+        public void OnMoveCanceled()
         {
             _moveVector = Vector2.zero;
         }
 
         public void OnJumpStarted()
         {
+            _rb.AddForce(Vector3.up * 30f, ForceMode.Impulse);
             // 점프 로직을 여기에 추가할 수 있습니다.
             Debug.Log("Jump started");
         }

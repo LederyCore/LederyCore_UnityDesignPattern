@@ -16,7 +16,12 @@ namespace State
         #region Events
         public Action<InputAction.CallbackContext> OnMovePerformed;
         public Action<InputAction.CallbackContext> OnMoveCanceled;
-        public Action OnJumpStarted;
+        public Action<InputAction.CallbackContext> OnJumpStarted;
+        public Action<InputAction.CallbackContext> OnJumpCanceled;
+        public Action<InputAction.CallbackContext> OnAttack;
+        public Action<InputAction.CallbackContext> OnSwap1;
+        public Action<InputAction.CallbackContext> OnSwap2;
+        public Action<InputAction.CallbackContext> OnSwap3;
         #endregion
 
         #region Methods
@@ -28,19 +33,27 @@ namespace State
 
         private void OnEnable()
         {
-            _actions.Player.Move.performed += RaiseMovePerformed;
-            _actions.Player.Move.canceled += RaiseMoveCanceled;
-            _actions.Player.Jump.started += RaiseJumpStarted;
+            _actions.Player.Move.performed += (ctx) => OnMovePerformed?.Invoke(ctx);
+            _actions.Player.Move.canceled += (ctx) => OnMoveCanceled?.Invoke(ctx);
+            _actions.Player.Jump.started += (ctx) => OnJumpStarted?.Invoke(ctx);
+            _actions.Player.Jump.canceled += (ctx) => OnJumpCanceled?.Invoke(ctx);
+            _actions.Player.Attack.started += (ctx) => OnAttack?.Invoke(ctx);
+            _actions.Player.Swap1.started += (ctx) => OnSwap1?.Invoke(ctx);
+            _actions.Player.Swap2.started += (ctx) => OnSwap2?.Invoke(ctx);
+            _actions.Player.Swap3.started += (ctx) => OnSwap3?.Invoke(ctx);
             _actions.Player.Enable();
         }
 
-
-
         private void OnDisable()
         {
-            _actions.Player.Move.performed -= RaiseMovePerformed;
-            _actions.Player.Move.canceled -= RaiseMoveCanceled;
-            _actions.Player.Jump.started -= RaiseJumpStarted;
+            _actions.Player.Move.performed -= (ctx) => OnMovePerformed?.Invoke(ctx);
+            _actions.Player.Move.canceled -= (ctx) => OnMoveCanceled?.Invoke(ctx);
+            _actions.Player.Jump.started -= (ctx) => OnJumpStarted?.Invoke(ctx);
+            _actions.Player.Jump.canceled -= (ctx) => OnJumpCanceled?.Invoke(ctx);
+            _actions.Player.Attack.started -= (ctx) => OnAttack?.Invoke(ctx);
+            _actions.Player.Swap1.started -= (ctx) => OnSwap1?.Invoke(ctx);
+            _actions.Player.Swap2.started -= (ctx) => OnSwap2?.Invoke(ctx);
+            _actions.Player.Swap3.started -= (ctx) => OnSwap3?.Invoke(ctx);
             _actions.Player.Disable();
         }
 
@@ -49,11 +62,6 @@ namespace State
             _actions.Dispose();
         }
         #endregion
-
-        private void RaiseMovePerformed(InputAction.CallbackContext ctx) => OnMovePerformed?.Invoke(ctx);
-        private void RaiseMoveCanceled(InputAction.CallbackContext ctx) => OnMoveCanceled?.Invoke(ctx);
-        private void RaiseJumpStarted(InputAction.CallbackContext ctx) => OnJumpStarted?.Invoke(); 
-
         #endregion
     }
 }

@@ -891,6 +891,8 @@ GameObject:
   - component: {fileID: 1541203121}
   - component: {fileID: 1541203125}
   - component: {fileID: 1541203126}
+  - component: {fileID: 1541203127}
+  - component: {fileID: 1541203128}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -998,7 +1000,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541203120}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1029,6 +1031,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b505032e100ed8245bf3d21b00150482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1541203127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541203120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72ed8b5951d2344eb8dd1271b23215e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: ff045f207f986c444901424a72e69160, type: 2}
+  initialState: {fileID: 11400000, guid: c2cdc051c9dd3a348bf0e5a54dec4049, type: 2}
+--- !u!114 &1541203128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541203120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 361c5a3fe8c1e1a48b305cc5b2221425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _debugMode: 1
+  _groundCheckDistance: 1.15
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _offset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &1616868560
 GameObject:
   m_ObjectHideFlags: 0
