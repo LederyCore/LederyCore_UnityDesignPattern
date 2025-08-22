@@ -40,5 +40,27 @@
             UnityEngine.Debug.LogErrorFormat("[{0}] {1}", DateTime.Now.ToString("yyyy,MM,dd HH-mm-ss.fff"), msg);
         }
         #endregion
+
+        #region Component
+        /// <summary>
+        /// 지정한 GameObject에서 컴포넌트를 가져오거나 없으면 새로 추가합니다.
+        /// </summary>
+        public static T GetOrAddComponent<T>(this GameObject go) where T : Component
+        {
+            var comp = go.GetComponent<T>();
+            if (comp == null)
+                comp = go.AddComponent<T>();
+            return comp;
+        }
+
+        /// <summary>
+        /// 지정한 Component에서 대상 컴포넌트를 가져오거나 없으면 새로 추가합니다.
+        /// 사용 예: this.GetOrAddComponent<Rigidbody>()
+        /// </summary>
+        public static T GetOrAddComponent<T>(this Component c) where T : Component
+        {
+            return c.gameObject.GetOrAddComponent<T>();
+        }
+        #endregion
     }
 }
