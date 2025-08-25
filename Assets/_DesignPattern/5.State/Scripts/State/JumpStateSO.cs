@@ -16,7 +16,10 @@
             InitializeSubState();
             Debug.Log("Jump State Entered");
             _context.Rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            _currentSubState.Enter(_context);
+            if (_currentSubState != null)
+            {
+                _currentSubState.Enter(_context);
+            }
         }
 
         public override void Update()
